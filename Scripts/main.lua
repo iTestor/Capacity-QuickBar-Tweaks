@@ -7,12 +7,11 @@ local MOD_INFO = {
     name = "CapacityQuickBarTweaks",
     display = "Capacity & QuickBar Tweaks",
     version = "1.0.0",
-    github = "dein-name/dein-repo", -- optional
-    nexus_id = "999999"             -- optional
+    github = "iTestor/Capacity-QuickBar-Tweaks", -- optional
+    nexus_id = "252"                             -- optional
 }
 
 local SETTINGS = {
-    { key = "Enabled",          title = "Enable Mod",         description = "Enable or disable the mod",       type = "toggle", default = true },
     { key = "Debug",            title = "Enable Debug",       description = "Enable debug console logs",       type = "toggle", default = false },
 
     { key = "FloorLockerSlots", title = "Floor Locker Slots", description = "Max Items in Floor Locker",       type = "slider", default = 100,  min = 10, max = 200, step = 1, format = "integer" },
@@ -30,13 +29,12 @@ ConfigLib:WriteManifest()
 
 -- Config-Table (Initial values)
 local Config = {
-    Enabled = true,
     Debug = false,
 
-    FloorLockerSlots = 100,
+    FloorLockerSlots = 35,
     FloorLockerCols = 5,
 
-    WallLockerSlots = 50,
+    WallLockerSlots = 35,
     WallLockerCols = 5,
 
     QuickBarSlots = 5,
