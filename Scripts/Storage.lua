@@ -27,6 +27,7 @@ function StorageMod.Init(Config)
 
                     if newCols < 1 then newCols = 5 end
 
+                    inventoryComp.SetMaxItems(newSlots)
                     inventoryComp.MaxItems = newSlots
                     inventoryComp.Columns = newCols
                 end
@@ -61,6 +62,7 @@ function StorageMod.Init(Config)
 
                     if newCols < 1 then newCols = 5 end
 
+                    locker.Inventory.SetMaxItems(newSlots)
                     locker.Inventory.MaxItems = newSlots
                     locker.Inventory.Columns = newCols
 
@@ -87,6 +89,7 @@ function StorageMod.UpdateLive(Config)
                 -- HARD-FAILSAFE
                 if newCols < 1 then newCols = 5 end
 
+                locker.Inventory.SetMaxItems(newSlots)
                 locker.Inventory.MaxItems = newSlots
                 locker.Inventory.Columns = newCols
             end
@@ -105,6 +108,7 @@ function StorageMod.UpdateLive(Config)
                 -- HARD-FAILSAFE
                 if newCols < 1 then newCols = 5 end
 
+                locker.Inventory.SetMaxItems(newSlots)
                 locker.Inventory.MaxItems = newSlots
                 locker.Inventory.Columns = newCols
             end
