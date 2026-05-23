@@ -21,12 +21,11 @@ local function ApplyQuickSlots(desired_slots)
 
     -- Get current bonus slots
     local current_extra_slots = tracker:GetValue(INCREASE_TAG, PERMANENT_TAG) or 0
+    local current_total_slots = BASE_SLOTS + current_extra_slots
 
-    -- Calculate difference (How many slots are missing to reach the desired value?)
-    local slots_to_add = desired_slots - (BASE_SLOTS + current_extra_slots)
-
-    -- Only update if something actually changed
-    if slots_to_add ~= 0 then
+    -- Only update if the desired slots are different from the current total
+    if desired_slots ~= current_total_slots then
+        local slots_to_add = desired_slots - current_total_slots
         tracker:Notify(INCREASE_TAG, PERMANENT_TAG, slots_to_add)
 
         return true -- Indicate a change
@@ -40,8 +39,10 @@ function QuickBarMod.Init(Config)
     NotifyOnNewObject("/Game/Blueprints/Core/BP_SN2PlayerCharacter.BP_SN2PlayerCharacter_C", function(CreatedObject)
         if CreatedObject:IsValid() then
             if ApplyQuickSlots(Config.QuickBarSlots) then
-                if Config.Debug then print("[CapacityQuickBarTweaks] QuickBar updated to " ..
-                    Config.QuickBarSlots .. " slots") end
+                if Config.Debug then
+                    print("[CapacityQuickBarTweaks] QuickBar updated to " ..
+                        Config.QuickBarSlots .. " slots")
+                end
             end
         end
     end)
