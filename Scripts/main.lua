@@ -6,7 +6,7 @@ local QuickBar = require("QuickBar")
 local MOD_INFO = {
     name = "CapacityQuickBarTweaks",
     display = "Capacity & QuickBar Tweaks",
-    version = "1.0.0",
+    version = "1.0.1",
     github = "iTestor/Capacity-QuickBar-Tweaks", -- optional
     nexus_id = "252"                             -- optional
 }
@@ -14,11 +14,11 @@ local MOD_INFO = {
 local SETTINGS = {
     { key = "Debug",            title = "Enable Debug",       description = "Enable debug console logs",       type = "toggle", default = false },
 
-    { key = "FloorLockerSlots", title = "Floor Locker Slots", description = "Max Items in Floor Locker",       type = "slider", default = 100,  min = 10, max = 200, step = 1, format = "integer" },
-    { key = "FloorLockerCols",  title = "Floor Locker Cols",  description = "Columns in Floor Locker",         type = "slider", default = 5,    min = 1,  max = 20,  step = 1, format = "integer" },
+    { key = "FloorLockerSlots", title = "Floor Locker Slots", description = "Max Items in Floor Locker",       type = "slider", default = 100,  min = 10, max = 999, step = 1, format = "integer" },
+    { key = "FloorLockerCols",  title = "Floor Locker Cols",  description = "Columns in Floor Locker",         type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" },
 
-    { key = "WallLockerSlots",  title = "Wall Locker Slots",  description = "Max Items in Wall Locker",        type = "slider", default = 50,   min = 10, max = 100, step = 1, format = "integer" },
-    { key = "WallLockerCols",   title = "Wall Locker Cols",   description = "Columns in Wall Locker",          type = "slider", default = 5,    min = 1,  max = 20,  step = 1, format = "integer" },
+    { key = "WallLockerSlots",  title = "Wall Locker Slots",  description = "Max Items in Wall Locker",        type = "slider", default = 50,   min = 10, max = 999, step = 1, format = "integer" },
+    { key = "WallLockerCols",   title = "Wall Locker Cols",   description = "Columns in Wall Locker",          type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" },
 
     { key = "QuickBarSlots",    title = "QuickBar Slots",     description = "Number of QuickBar Slots (1-10)", type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" }
 }
