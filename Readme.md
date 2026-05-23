@@ -28,5 +28,10 @@ The mod uses the `Mod Settings` menu to allow easy in-game customization:
 - **Floor/Wall Locker Settings:** Adjust capacity (slots) and layout (columns).
 - **QuickBar Slots:** Set the desired number of quickbar slots (1-10).
 
+## Credits & Inspiration
+This mod was inspired by the work of:
+- [More Quick Slots](https://www.nexusmods.com/subnautica2/mods/38)
+- [Bigger Locker Storage (UE4SS)](https://www.nexusmods.com/subnautica2/mods/135)
+
 ---
 *Built with UE4SS.*
