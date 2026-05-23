@@ -6,7 +6,7 @@ local QuickBar = require("QuickBar")
 local MOD_INFO = {
     name = "CapacityQuickBarTweaks",
     display = "Capacity & QuickBar Tweaks",
-    version = "1.0.1",
+    version = "1.0.2",
     github = "iTestor/Capacity-QuickBar-Tweaks", -- optional
     nexus_id = "252"                             -- optional
 }
