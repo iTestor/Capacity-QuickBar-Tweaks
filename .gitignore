@@ -1,0 +1,5 @@
+temp_repo/
+*.log
+*.tmp
+*.bak
+.DS_Store
