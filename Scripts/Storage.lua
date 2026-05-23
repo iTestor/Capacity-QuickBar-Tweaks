@@ -28,7 +28,6 @@ function StorageMod.Init(Config)
 
                     if newCols < 1 then newCols = 5 end
 
-                    -- KORREKTUR: Doppelpunkt für den Funktionsaufruf!
                     inventoryComp:SetMaxItems(newSlots)
                     inventoryComp.MaxItems = newSlots
                     inventoryComp.Columns = newCols
@@ -63,7 +62,6 @@ function StorageMod.Init(Config)
                         local newCols  = math.floor(tonumber(Config[data.keys.colsKey]) or 5)
                         if newCols < 1 then newCols = 5 end
 
-                        -- KORREKTUR: SetMaxItems hier auch eingefügt
                         inventoryComp:SetMaxItems(newSlots)
                         inventoryComp.MaxItems = newSlots
                         inventoryComp.Columns = newCols
@@ -88,7 +86,6 @@ local function UpdateSpecificLockers(className, slotsVal, colsVal)
                     local newCols  = math.floor(tonumber(colsVal) or 5)
                     if newCols < 1 then newCols = 5 end
 
-                    -- KORREKTUR: Doppelpunkt für den Funktionsaufruf!
                     inventoryComp:SetMaxItems(newSlots)
                     inventoryComp.MaxItems = newSlots
                     inventoryComp.Columns = newCols
