@@ -34,7 +34,7 @@ The mod uses the [i]Mod Settings[/i] menu for in-game customization. You can tog
 [*][b]Folder Structure:[/b] Please ensure the files are extracted correctly. Your folder path should look like this: 
 [i]Subnautica2/Binaries/Win64/ue4ss/Mods/CapacityQuickBarTweaks/Scripts/[/i]
 If your zip extractor creates nested folders like [i]Scripts/Scripts/[/i], please move the files so they match the structure above.[/*]
-[*][b]Mod Loading:[/b] This mod uses [i]enabled.txt[/i] to load automatically. If you have any issues, make sure the [i]enabled.txt[/i] is located directly inside the [i]CapacityQuickBarTweaks[/i] folder.[/*]
+[*] [b]Mod Loading:[/b] This mod uses [i]enabled.txt[/i] to load automatically. If you have any issues, make sure the [i]enabled.txt[/i] is located directly inside the [i]CapacityQuickBarTweaks[/i] folder. If it still doesn't load, you can manually register it by adding [i]CapacityQuickBarTweaks : 1[/i] to your [i]ue4ss/Mods/mods.txt[/i] file.[/*]
 [/list]
 
 [size=4][color=#f9a85d][b]Credits & Inspiration[/b][/color][/size]
