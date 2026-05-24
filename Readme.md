@@ -28,6 +28,12 @@ The mod uses the `Mod Settings` menu to allow easy in-game customization:
 - **Floor/Wall Locker Settings:** Adjust capacity (slots) and layout (columns).
 - **QuickBar Slots:** Set the desired number of quickbar slots (1-10).
 
+## Troubleshooting & Installation Tips
+- **Folder Structure:** Please ensure the files are extracted correctly. Your folder path should look like this: 
+  `Subnautica2/Binaries/Win64/ue4ss/Mods/CapacityQuickBarTweaks/Scripts/`
+  If your zip extractor creates nested folders, please move the files so they match the structure above.
+- **Mod Loading:** This mod uses `enabled.txt` to load automatically. If you have any issues, make sure the `enabled.txt` is located directly inside the `CapacityQuickBarTweaks` folder.
+
 ## Credits & Inspiration
 This mod was inspired by the work of:
 - [More Quick Slots](https://www.nexusmods.com/subnautica2/mods/38)
