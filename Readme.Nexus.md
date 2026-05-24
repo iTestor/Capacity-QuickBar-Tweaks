@@ -6,9 +6,9 @@
 
 [size=4][color=#f9a85d][b]Features[/b][/color][/size]
 [list]
-[*][b]Custom Storage Capacity:[/b] Adjust the number of slots and columns for floor and wall lockers.[/*]
-[*][b]QuickBar Expansion:[/b] Increase your quickbar slots beyond the default count (1-10).[/*]
-[*][b]Live Updates:[/b] Changes in the mod settings take effect immediately while in-game.[/*]
+[*] [b]Custom Storage Capacity:[/b] Adjust the number of Rows and Columns for floor, wall, and portable lockers.
+[*] [b]QuickBar Expansion:[/b] Increase your quickbar slots beyond the default count (1-10).
+[*] [b]Live Updates:[/b] Changes in the mod settings take effect immediately while in-game.
 [/list]
 [size=4][color=#f9a85d][b]Requirements[/b][/color][/size]
 [list]
@@ -26,7 +26,12 @@
 [*]Extract the contents into your [i]Subnautica2/Binaries/Win64/ue4ss/Mods/[/i] folder.[/*]
 [/list]
 [size=4][color=#f9a85d][b]Configuration[/b][/color][/size]
-The mod uses the [i]Mod Settings[/i] menu for in-game customization. You can toggle the mod on/off, enable debug logging, and adjust all locker capacities and quickbar slots via sliders.
+The mod uses the [i]Mod Settings[/i] menu for in-game customization:
+[list]
+[*] [b]Enabled Toggles:[/b] Toggle custom capacity for each locker type individually.[/*]
+[*] [b]Locker Settings:[/b] Adjust capacity by defining Rows and Columns (Total capacity = Rows * Columns).[/*]
+[*] [b]QuickBar Slots:[/b] Set the desired number of quickbar slots (1-10).[/*]
+[/list]
 
 
 [color=#f9a85d][size=4][b]Troubleshooting & Installation Tips[/b][/size][/color]

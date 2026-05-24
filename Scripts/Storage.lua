@@ -5,41 +5,53 @@ local StorageMod = {}
 local pendingLockers = {}
 local activeLockers = {}
 
-local function ApplyLockerSettings(inventoryComp, configKeys, Config)
-    if not inventoryComp or not inventoryComp:IsValid() then return end
+local floatingLockerKeys = {
+    toggleKey = "FloatingLockerToggle",
+    rowsKey = "FloatingLockerRows",
+    colsKey = "FloatingLockerCols",
+    defaultRows = 3,
+    defaultCols = 5,
+}
 
-    local newSlots = configKeys.defaultSlots
+local function ApplyLockerSettings(Inventory, configKeys, Config)
+    if not Inventory or not Inventory:IsValid() then return end
+
     local newCols = configKeys.defaultCols
+    local newSlots = configKeys.defaultrows * newCols
 
     if Config[configKeys.toggleKey] then
-        newSlots = math.floor(tonumber(Config[configKeys.slotsKey]) or configKeys.defaultSlots)
         newCols = math.floor(tonumber(Config[configKeys.colsKey]) or configKeys.defaultCols)
+        newSlots = math.floor(tonumber(Config[configKeys.rowsKey]) or configKeys.defaultrows) * newCols
     end
 
     if newCols < 1 then newCols = configKeys.defaultCols end
 
-    inventoryComp:SetMaxItems(newSlots)
-    inventoryComp.MaxItems = newSlots
-    inventoryComp.Columns = newCols
+    if Inventory.Columns ~= newCols or Inventory.MaxItems ~= newSlots then
+        Inventory:SetMaxItems(newSlots)
+        Inventory.MaxItems = newSlots
+        Inventory.Columns = newCols
+    end
 end
 
 function StorageMod.Init(Config)
     local storageMapping = {
         ["/Game/Blueprints/BaseBuilding/BP_Locker_Floor.BP_Locker_Floor_C"] = {
             toggleKey = "FloorLockerToggle",
-            slotsKey = "FloorLockerSlots",
+            rowsKey = "FloorLockerRows",
             colsKey = "FloorLockerCols",
-            defaultSlots = 30,
+            defaultRows = 6,
             defaultCols = 5,
         },
         ["/Game/Blueprints/BaseBuilding/BP_Locker_Wall.BP_Locker_Wall_C"] = {
             toggleKey = "WallLockerToggle",
-            slotsKey = "WallLockerSlots",
+            rowsKey = "WallLockerRows",
             colsKey = "WallLockerCols",
-            defaultSlots = 20,
+            defaultRows = 4,
             defaultCols = 5,
         }
     }
+
+    --[14:06:25.7348776] [Lua] BlueprintGeneratedClass /Game/Blueprints/Items/Deployables/BP_FloatingLocker_Carryable.BP_FloatingLocker_Carryable_C
 
     -- 1. Intercept lockers when they spawn
     for classPath, configKeys in pairs(storageMapping) do
@@ -82,7 +94,7 @@ function StorageMod.Init(Config)
     end)
 end
 
-function StorageMod.UpdateLive(Config, DefaultConfig)
+function StorageMod.UpdateLive(Config)
     -- Clean up and update cached lockers
     for locker, keys in pairs(activeLockers) do
         if locker:IsValid() then
@@ -95,6 +107,19 @@ function StorageMod.UpdateLive(Config, DefaultConfig)
     end
 
     if Config.Debug then print("[CapacityQuickBarTweaks] Updated cached lockers") end
+end
+
+function StorageMod.UpdateFloatingLockers(Config)
+    local FloatingLockers = FindAllOf("BP_FloatingLocker_Carryable_C")
+    if not FloatingLockers then return end
+
+    for _, Locker in ipairs(FloatingLockers) do
+        if Locker:IsValid() then
+            local Inventory = Locker.UWEInventory
+
+            ApplyLockerSettings(Inventory, floatingLockerKeys, Config)
+        end
+    end
 end
 
 return StorageMod
