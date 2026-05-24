@@ -17,11 +17,11 @@ local function ApplyLockerSettings(Inventory, configKeys, Config)
     if not Inventory or not Inventory:IsValid() then return end
 
     local newCols = configKeys.defaultCols
-    local newSlots = configKeys.defaultrows * newCols
+    local newSlots = configKeys.defaultRows * newCols
 
     if Config[configKeys.toggleKey] then
         newCols = math.floor(tonumber(Config[configKeys.colsKey]) or configKeys.defaultCols)
-        newSlots = math.floor(tonumber(Config[configKeys.rowsKey]) or configKeys.defaultrows) * newCols
+        newSlots = math.floor(tonumber(Config[configKeys.rowsKey]) or configKeys.defaultRows) * newCols
     end
 
     if newCols < 1 then newCols = configKeys.defaultCols end

@@ -15,19 +15,19 @@ local SETTINGS = {
     { key = "Debug",                title = "Enable Debug",           description = "Enable debug console logs",                                                                                      type = "toggle", default = false },
 
     { key = "FloorLockerToggle",    title = "Enable Floor Locker",    description = "Enable custom storage capacity for Floor locker",                                                                type = "toggle", default = true },
-    { key = "FloorLockerRows",      title = "Floor Locker Rows",      description = "Rows in Floor Locker",                                                                                           type = "slider", default = 6,    min = 1,  max = 200, step = 1, format = "integer" },
-    { key = "FloorLockerCols",      title = "Floor Locker Cols",      description = "Columns in Floor Locker",                                                                                        type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" },
+    { key = "FloorLockerRows",      title = "Floor Locker Rows",      description = "Rows in Floor Locker",                                                                                           type = "slider", default = 6,    min = 1, max = 200, step = 1, format = "integer" },
+    { key = "FloorLockerCols",      title = "Floor Locker Cols",      description = "Columns in Floor Locker",                                                                                        type = "slider", default = 5,    min = 1, max = 10,  step = 1, format = "integer" },
 
     { key = "WallLockerToggle",     title = "Enable Wall Locker",     description = "Enable custom storage capacity for Wall locker",                                                                 type = "toggle", default = true },
-    { key = "WallLockerRows",       title = "Wall Locker Rows",       description = "Rows in Wall Locker",                                                                                            type = "slider", default = 4,    min = 1,  max = 200, step = 1, format = "integer" },
-    { key = "WallLockerCols",       title = "Wall Locker Cols",       description = "Columns in Wall Locker",                                                                                         type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" },
+    { key = "WallLockerRows",       title = "Wall Locker Rows",       description = "Rows in Wall Locker",                                                                                            type = "slider", default = 4,    min = 1, max = 200, step = 1, format = "integer" },
+    { key = "WallLockerCols",       title = "Wall Locker Cols",       description = "Columns in Wall Locker",                                                                                         type = "slider", default = 5,    min = 1, max = 10,  step = 1, format = "integer" },
 
     { key = "FloatingLockerToggle", title = "Enable Portable Locker", description = "Enable custom storage capacity for Portable locker",                                                             type = "toggle", default = true },
-    { key = "FloatingLockerRows",   title = "Portable Locker Rows",   description = "Rows in Portable Locker",                                                                                        type = "slider", default = 3,    min = 10, max = 200, step = 1, format = "integer" },
-    { key = "FloatingLockerCols",   title = "Portable Locker Cols",   description = "Columns in Portable Locker",                                                                                     type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" },
+    { key = "FloatingLockerRows",   title = "Portable Locker Rows",   description = "Rows in Portable Locker",                                                                                        type = "slider", default = 3,    min = 1, max = 200, step = 1, format = "integer" },
+    { key = "FloatingLockerCols",   title = "Portable Locker Cols",   description = "Columns in Portable Locker",                                                                                     type = "slider", default = 5,    min = 1, max = 10,  step = 1, format = "integer" },
 
     { key = "QuickBarToggle",       title = "Enable QuickBar Slots",  description = "Enable or disable custom quickbar slots. When disabled, the quickbar reverts to the game's default slot count.", type = "toggle", default = true },
-    { key = "QuickBarSlots",        title = "QuickBar Slots",         description = "Number of QuickBar Slots (1-10)",                                                                                type = "slider", default = 5,    min = 1,  max = 10,  step = 1, format = "integer" }
+    { key = "QuickBarSlots",        title = "QuickBar Slots",         description = "Number of QuickBar Slots (1-10)",                                                                                type = "slider", default = 5,    min = 1, max = 10,  step = 1, format = "integer" }
 }
 
 -- Setup

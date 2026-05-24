@@ -26,7 +26,7 @@ function QuickBarMod.UpdateLive(Config)
     if BASE_EXTRA_SLOTS == nil then BASE_EXTRA_SLOTS = current_extra end
 
     if Config.QuickBarToggle then
-        if Config.QuickBarSlots ~= current_total then
+        if math.floor(Config.QuickBarSlots) ~= math.floor(current_total) then
             tracker:Notify(INCREASE_TAG, PERMANENT_TAG, Config.QuickBarSlots - current_total)
             if Config.Debug then print("[QuickBar] Set to " .. Config.QuickBarSlots) end
         end
