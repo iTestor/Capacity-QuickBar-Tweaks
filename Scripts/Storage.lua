@@ -48,16 +48,37 @@ function StorageMod.Init(Config)
             colsKey = "WallLockerCols",
             defaultRows = 4,
             defaultCols = 5,
+        },
+        ["/Game/Blueprints/BaseBuilding/Tailing/BP_Tailing_Chest.BP_Tailing_Chest_C"] = {
+            toggleKey = "TailingChestToggle",
+            rowsKey = "TailingChestRows",
+            colsKey = "TailingChestCols",
+            defaultRows = 5,
+            defaultCols = 5,
+        },
+        ["/Game/Blueprints/Items/Deployables/BP_FloatingLocker_Carryable.BP_FloatingLocker_Carryable_C"] = {
+            toggleKey = "FloatingLockerToggle",
+            rowsKey = "FloatingLockerRows",
+            colsKey = "FloatingLockerCols",
+            defaultRows = 3,
+            defaultCols = 5
+        },
+        ["/Game/Blueprints/Vehicle/Tadpole/BP_Haul_TadpoleChassis.BP_Haul_TadpoleChassis_C"] = {
+            toggleKey = "TadpolHaulToggle",
+            rowsKey = "TadpolHaulRows",
+            colsKey = "TadpolHaulCols",
+            defaultRows = 6,
+            defaultCols = 5,
         }
     }
-
-    --[14:06:25.7348776] [Lua] BlueprintGeneratedClass /Game/Blueprints/Items/Deployables/BP_FloatingLocker_Carryable.BP_FloatingLocker_Carryable_C
-
     -- 1. Intercept lockers when they spawn
     for classPath, configKeys in pairs(storageMapping) do
         NotifyOnNewObject(classPath, function(CreatedObject)
             if CreatedObject:IsValid() then
-                local inventoryComp = CreatedObject.Inventory or CreatedObject.UWEInventory
+                local inventoryComp = CreatedObject.Inventory
+                if not inventoryComp or not inventoryComp:IsValid() then
+                    inventoryComp = CreatedObject.UWEInventory;
+                end
 
                 ApplyLockerSettings(inventoryComp, configKeys, Config)
 
@@ -84,7 +105,11 @@ function StorageMod.Init(Config)
                 if data.ticks >= 2 then
                     local locker = data.obj
                     if locker and locker:IsValid() then
-                        local inventoryComp = locker.Inventory or locker.UWEInventory
+                        local inventoryComp = locker.Inventory
+                        if not inventoryComp or not inventoryComp:IsValid() then
+                            inventoryComp = locker.UWEInventory;
+                        end
+
                         ApplyLockerSettings(inventoryComp, data.keys, Config)
                     end
                     table.remove(pendingLockers, i)
@@ -98,7 +123,11 @@ function StorageMod.UpdateLive(Config)
     -- Clean up and update cached lockers
     for locker, keys in pairs(activeLockers) do
         if locker:IsValid() then
-            local inventoryComp = locker.Inventory or locker.UWEInventory
+            local inventoryComp = locker.Inventory
+            if not inventoryComp or not inventoryComp:IsValid() then
+                inventoryComp = locker.UWEInventory;
+            end
+
             ApplyLockerSettings(inventoryComp, keys, Config)
         else
             -- Remove if no longer valid
@@ -107,19 +136,6 @@ function StorageMod.UpdateLive(Config)
     end
 
     if Config.Debug then print("[CapacityQuickBarTweaks] Updated cached lockers") end
-end
-
-function StorageMod.UpdateFloatingLockers(Config)
-    local FloatingLockers = FindAllOf("BP_FloatingLocker_Carryable_C")
-    if not FloatingLockers then return end
-
-    for _, Locker in ipairs(FloatingLockers) do
-        if Locker:IsValid() then
-            local Inventory = Locker.UWEInventory
-
-            ApplyLockerSettings(Inventory, floatingLockerKeys, Config)
-        end
-    end
 end
 
 return StorageMod
