@@ -1,4 +1,5 @@
 temp_repo/
+Releases/*
 *.log
 *.tmp
 *.bak

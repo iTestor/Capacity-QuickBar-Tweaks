@@ -12,7 +12,7 @@ A simple UE4SS mod for Subnautica 2 to customize storage capacity and quickbar s
 - [InventoryScrollBar](https://www.nexusmods.com/subnautica2/mods/24) (Recommended to easily access expanded locker inventories)
 
 ## Features
-- **Custom Storage Capacity:** Adjust the number of Rows and Columns for floor, wall, and portable lockers.
+- **Custom Storage Capacity:** Adjust the number of Rows and Columns for each locker type individually.
 - **QuickBar Expansion:** Increase your quickbar slots beyond the default count (1-10).
 - **Live Updates:** Changes in the mod settings take effect immediately while in-game.
 
@@ -37,6 +37,7 @@ The mod uses the `Mod Settings` menu to allow easy in-game customization:
 This mod was inspired by the work of:
 - [More Quick Slots](https://www.nexusmods.com/subnautica2/mods/38)
 - [Bigger Locker Storage (UE4SS)](https://www.nexusmods.com/subnautica2/mods/135)
+- [Portable Locker Expanded](https://www.nexusmods.com/subnautica2/mods/173)
 
 ---
 *Built with UE4SS.*

@@ -31,8 +31,10 @@ function QuickBarMod.UpdateLive(Config)
             if Config.Debug then print("[QuickBar] Set to " .. Config.QuickBarSlots) end
         end
     else
-        tracker:Notify(INCREASE_TAG, PERMANENT_TAG, BASE_EXTRA_SLOTS - current_extra)
-        if Config.Debug then print("[QuickBar] Reset to original") end
+        if math.floor(BASE_EXTRA_SLOTS) ~= current_extra then
+            tracker:Notify(INCREASE_TAG, PERMANENT_TAG, BASE_EXTRA_SLOTS - current_extra)
+            if Config.Debug then print("[QuickBar] Reset to original") end
+        end
     end
 end
 
