@@ -1,4 +1,7 @@
 local Translation = {
+    ModInfo = {
+        Display = "Capacity & QuickBar Tweaks"
+    },
     Debug = {
         Title = "Enable Debug",
         Description = "Enable debug console logs"
@@ -78,6 +81,32 @@ local Translation = {
             Toggle = "Enable custom storage capacity for Tadpole Haul",
             Rows = "Rows in Tadpole Haul",
             Cols = "Columns in Tadpole Haul"
+        }
+    },
+
+    Bioreactor = {
+        Title = {
+            Toggle = "Enable Bioreactor",
+            Rows = "Bioreactor Rows",
+            Cols = "Bioreactor Cols"
+        },
+        Description = {
+            Toggle = "Enable custom capacity for Bioreactors",
+            Rows = "Rows in Bioreactor",
+            Cols = "Columns in Bioreactor"
+        }
+    },
+
+    ProcessorStation = {
+        Title = {
+            Toggle = "Enable Processor Station",
+            Rows = "Processor Station Input and Output Rows",
+            Cols = "Processor Station Input and Output Cols"
+        },
+        Description = {
+            Toggle = "Enable custom capacity for Processor Stations",
+            Rows = "Input and Output Rows in Processor Station",
+            Cols = "Input and Output Columns in Processor Station"
         }
     },
 }

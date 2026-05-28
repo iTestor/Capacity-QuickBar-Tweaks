@@ -1,4 +1,7 @@
 local Translation = {
+    ModInfo = {
+        Display = "Capacity & QuickBar Tweaks"
+    },
     Debug = {
         Title = "Debug aktivieren",
         Description = "Debug-Konsolen-Logs aktivieren"
@@ -78,6 +81,32 @@ local Translation = {
             Toggle = "Benutzerdefinierte Lagerkapazität für die Kaulquappe-Transportchassis aktivieren",
             Rows = "Zeilen in der Kaulquappe-Transportchassis",
             Cols = "Spalten in der Kaulquappe-Transportchassis"
+        }
+    },
+
+    Bioreactor = {
+        Title = {
+            Toggle = "Bioreaktor aktivieren",
+            Rows = "Bioreaktor Zeilen",
+            Cols = "Bioreaktor Spalten"
+        },
+        Description = {
+            Toggle = "Benutzerdefinierte Lagerkapazität für Bioreaktoren aktivieren",
+            Rows = "Zeilen im Bioreaktor",
+            Cols = "Spalten im Bioreaktor"
+        }
+    },
+
+    ProcessorStation = {
+        Title = {
+            Toggle = "Prozessor Station aktivieren",
+            Rows = "Prozessor Station Input und Output Zeilen",
+            Cols = "Prozessor Station Input und Output Spalten"
+        },
+        Description = {
+            Toggle = "Benutzerdefinierte Lagerkapazität für Prozessor Stationen aktivieren",
+            Rows = "Input und Output Zeilen in Prozessor Station",
+            Cols = "Input und Output Spalten in Prozessor Station"
         }
     },
 }

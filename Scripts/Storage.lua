@@ -4,14 +4,7 @@ local StorageMod = {}
 
 local pendingLockers = {}
 local activeLockers = {}
-
-local floatingLockerKeys = {
-    toggleKey = "FloatingLockerToggle",
-    rowsKey = "FloatingLockerRows",
-    colsKey = "FloatingLockerCols",
-    defaultRows = 3,
-    defaultCols = 5,
-}
+setmetatable(activeLockers, { __mode = "k" })
 
 local function ApplyLockerSettings(Inventory, configKeys, Config)
     if not Inventory or not Inventory:IsValid() then return end
@@ -69,8 +62,16 @@ function StorageMod.Init(Config)
             colsKey = "TadpolHaulCols",
             defaultRows = 6,
             defaultCols = 5,
+        },
+        ["/Game/Blueprints/BaseBuilding/BP_Bioreactor.BP_Bioreactor_C"] = {
+            toggleKey = "BioreactorToggle",
+            rowsKey = "BioreactorRows",
+            colsKey = "BioreactorCols",
+            defaultRows = 2,
+            defaultCols = 5,
         }
     }
+
     -- 1. Intercept lockers when they spawn
     for classPath, configKeys in pairs(storageMapping) do
         NotifyOnNewObject(classPath, function(CreatedObject)
@@ -78,6 +79,9 @@ function StorageMod.Init(Config)
                 local inventoryComp = CreatedObject.Inventory
                 if not inventoryComp or not inventoryComp:IsValid() then
                     inventoryComp = CreatedObject.UWEInventory;
+                end
+                if not inventoryComp or not inventoryComp:IsValid() then
+                    inventoryComp = CreatedObject.InventoryComponent;
                 end
 
                 ApplyLockerSettings(inventoryComp, configKeys, Config)
@@ -109,6 +113,9 @@ function StorageMod.Init(Config)
                         if not inventoryComp or not inventoryComp:IsValid() then
                             inventoryComp = locker.UWEInventory;
                         end
+                        if not inventoryComp or not inventoryComp:IsValid() then
+                            inventoryComp = locker.InventoryComponent;
+                        end
 
                         ApplyLockerSettings(inventoryComp, data.keys, Config)
                     end
@@ -126,6 +133,9 @@ function StorageMod.UpdateLive(Config)
             local inventoryComp = locker.Inventory
             if not inventoryComp or not inventoryComp:IsValid() then
                 inventoryComp = locker.UWEInventory;
+            end
+            if not inventoryComp or not inventoryComp:IsValid() then
+                inventoryComp = locker.InventoryComponent;
             end
 
             ApplyLockerSettings(inventoryComp, keys, Config)
