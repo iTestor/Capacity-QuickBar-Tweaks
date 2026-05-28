@@ -1,6 +1,7 @@
 temp_repo/
-Releases/*
+Releases/
 *.log
 *.tmp
 *.bak
 .DS_Store
+Scripts/Language.txt
