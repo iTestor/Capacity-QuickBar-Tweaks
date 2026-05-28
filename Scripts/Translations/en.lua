@@ -22,8 +22,8 @@ local Translation = {
     FloorLocker = {
         Title = {
             Toggle = "Enable Floor Lockers",
-            Rows = "Flor Locker Rows",
-            Cols = "Flor Locker Cols"
+            Rows = "Floor Locker Rows",
+            Cols = "Floor Locker Cols"
         },
         Description = {
             Toggle = "Enable custom storage capacity for Floor locker",
