@@ -13,7 +13,7 @@ local lastUsedLanguage = "en";
 local MOD_INFO = {
     name = "CapacityQuickBarTweaks",
     display = "Capacity & QuickBar Tweaks",
-    version = "1.4.2",
+    version = "1.4.3",
     github = "iTestor/Capacity-QuickBar-Tweaks", -- optional
     nexus_id = "252"                             -- optional
 }
